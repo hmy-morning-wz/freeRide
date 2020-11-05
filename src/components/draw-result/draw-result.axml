@@ -1,0 +1,63 @@
+<view class="am-modal-{{show ? 'show' : 'hide'}}" disable-scroll="{{true}}">
+	<view class="am-modal-mask" data-seed="抽奖权益" data-group="抽奖结果弹框" data-obj="{{awardPrizes}}" onAppear="onAppear">
+		<!-- am-modal-mask -->
+		<view class="am-modal-document ">
+			<!-- am-modal-document -->
+			<view class="wave ripple">
+				<!-- wave ripple -->
+				<view class="circle"></view>
+				<view class="circle"></view>
+				<view class="circle"></view>
+			</view>
+			<!-- wave ripple -->
+			<view class="star-box">
+				<!-- starbox  -->
+				<view class="star">
+					<view class="star1"></view>
+					<view class="star2"></view>
+					<view class="star3"></view>
+				</view>
+			</view>
+			<!-- starbox  -->
+			<view class="am-modal animate " style="background: url('{{resultBgImage}}') center no-repeat; background-size: 609rpx 100%;" data-seed="抽奖结果弹框" data-group="抽奖结果弹框" data-obj="{{awardPrizes}}">
+				<!-- am-modal -->
+				<view class="am-modal-body">
+					<!-- am-modal-body -->
+					<view class="msg-box" data-seed="奖品" data-group="抽奖结果弹框" data-obj="{{awardPrizes}}">
+						<block a:if="{{!awardPrizes.win}}">
+							<view class="msg1">抱歉，已经发完</view>
+						</block>
+						<block a:else>
+							<view class="msg">
+								<view class="text1">{{awardPrizes.titleText || '恭喜获得' }}</view>
+								<view class="text2">{{awardPrizes.prizeName}}</view>
+							</view>
+							<image mode="scaleToFill" class="image" a:if="{{awardPrizes && awardPrizes.image}}" src="{{awardPrizes.image}}" />
+							<view a:if="{{ awardPrizes.amount && awardPrizes.amount2}}" class="bus_amount3">
+								<text class="text1">{{awardPrizes.amount}}</text>
+								<text class="text2">{{awardPrizes.amount2}}</text>
+								<text class="text3">元</text>
+							</view>
+							<view a:elif="{{awardPrizes.amount}}" class="{{awardPrizes.zktype?'bus_amount2':'bus_amount1'}}">{{awardPrizes.amount}}</view>
+						</block>
+					</view>
+				</view>
+				<!-- am-modal-body -->
+				<view class="am-modal-footer" hover-class="am-modal-footer-active" data-seed="点击按钮" data-group="抽奖结果弹框" data-obj="{{awardPrizes}}" onTap="onButtonClick">
+					<!-- am-modal-footer -->
+					<block a:if="{{!awardPrizes.win}}">
+						<text>{{awardPrizes.buttonText1 ||buttonText1}}</text>
+					</block>
+					<block a:else>
+						<text>{{awardPrizes.buttonText2 ||  buttonText2}}</text>
+					</block>
+				</view>
+				<!-- am-modal-footer -->
+				<view class="am-modal-close " hover-class="am-modal-close-active" a:if="{{showClose}}" data-seed="点击关闭" data-group="抽奖结果弹框" data-obj="{{awardPrizes}}" onTap="onModalClick" />
+			</view>
+			<!-- am-modal -->
+		</view>
+		<!-- am-modal-document -->
+	</view>
+	<!-- am-modal-mask -->
+</view>

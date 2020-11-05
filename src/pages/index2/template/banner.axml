@@ -1,0 +1,5 @@
+<template name="banner">
+  <view class="banner"   onTap="onBannerTap" data-group="广告"  data-obj="{{banner}}" >
+      <image lazy-load="{{true}}" a:if="{{banner && banner.image}}" mode="scaleToFill" src="{{`${banner.image}?x-oss-process=image/resize,m_fill,h_160,w_750/format,webp`}}"/>
+  </view>
+</template>

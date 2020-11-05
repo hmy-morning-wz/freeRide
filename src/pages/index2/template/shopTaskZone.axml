@@ -1,0 +1,27 @@
+<template name="shopTaskZone">
+  <view class="shop-task-zone">
+    <view class="shop-task-list">
+      <swiper
+        style="height:120rpx"
+        class="shop-task-swiper"
+        previousMargin="0px"
+        nextMargin="0px"
+        indicator-dots="{{false}}"
+        autoplay
+        circular
+      >
+        <swiper-item key="swiper-item-{{index}}" a:for="{{shopTaskZone}}">
+            <view class="shop-task-swiper-item" data-obj="{{item}}" onTap="onShopTap" data-index="{{index}}" data-group="店铺优惠券区">
+              <image lazy-load mode="scaleToFill" src="{{item.image}}"/>
+              <view class="receive-btn" a:if="{{item.state===1}}">
+                可领取
+              </view>
+              <view class="receive-btn" a:else>
+                立即领取
+              </view>
+            </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</template>

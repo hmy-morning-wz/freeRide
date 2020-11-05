@@ -1,0 +1,44 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": false,
+    "allowJs": false,
+    "alwaysStrict": false,
+    "declaration": false,
+    "importHelpers": true,
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "sourceMap": false,
+    "target": "es2017",
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types"
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "/services/*": [
+        "./services/*"
+      ],
+      "/components/*": [
+        "./components/*"
+      ]
+    },
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts"
+  ]
+}

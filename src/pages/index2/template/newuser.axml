@@ -1,0 +1,23 @@
+<template name="newuser">
+<view class="am-modal-show" disable-scroll="{{true}}">
+	<view class="am-modal-mask" data-seed="新手活动" data-group="新手活动弹框" data-obj="{{firstTask}}" onAppear="onAppear" >  <!-- am-modal-mask -->
+	<view class="am-modal-document ">  <!-- am-modal-document -->
+		<view class="wave ripple">  <!-- wave ripple -->
+			<view class="circle"></view>
+			<view class="circle"></view>
+			<view class="circle"></view>
+		</view> <!-- wave ripple -->
+		 
+		<view  a:if="{{newUserInfo.newUserBgImage}}" class="am-newuser-modal animate " style="background: url('{{newUserInfo.newUserBgImage}}') center no-repeat; background-size: 100% 100%;"  > <!-- am-modal -->
+
+<view class="modal-body"  data-seed="去完成" data-group="新手活动弹框" data-obj="{{firstTask}}"  onTap="onNewrUserTask"> <!-- am-modal-body -->				
+	    <view a:if="{{newUserInfo.newUserDrawBt}}"  class="newuser-button"  style="background: url('{{newUserInfo.newUserDrawBt}}') center no-repeat; background-size: 100% 100%;" ></view>
+			<view a:else class="newuser-button"  ></view>					
+			</view> <!-- am-modal-body -->
+
+		<view a:if="{{newUserInfo.closeShow=='ON'}}" class="modal-close " hover-class="am-modal-close-active"   data-seed="点击关闭" data-group="新手活动弹框" data-obj="{{firstTask}}"  onTap="onNewUserClose" />
+		</view>  <!-- am-modal -->
+			</view>  <!-- am-modal-document -->
+	</view> <!-- am-modal-mask -->
+</view>
+</template>

@@ -1,0 +1,26 @@
+<import-sjs name="helper" from="../../../utils/helper.sjs"></import-sjs>
+<template name="brandList">
+  <view class="brand-zone">
+  <!--<view class="three-bg">
+      <view class="bg-top"></view>
+      <view class="bg-mid"></view>
+      <view class="bg-bot"></view>
+    </view>-->
+    <view class="area-title"><view class="area-title-before"/> <text>{{brandTitle||'品牌墙'}}</text> <view class="area-title-after"/></view>
+    <view class="brand-list">
+      <block a:for="{{brandList}}">
+        <view class="each-brand" data-obj="{{item}}" onAppear="onNopAppear" onTap="activityTap" data-index="{{index}}" data-group="品牌墙">
+          <view class="flower-bg">
+            <image class="brand-wall-img" mode="scaleToFill" src="{{helper.crossImage(item.image)}}"></image>
+          </view>
+          <view class="icon-bg">
+            <image class="brand-wall-icon" mode="scaleToFill" src="{{helper.crossImage(item.icon_img)}}"></image>
+          </view>
+          <view class="brand-wall-bubble">
+            {{item.text}}
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>

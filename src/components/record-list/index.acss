@@ -1,0 +1,93 @@
+
+.record-contain{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1001
+}
+.record-list{
+  width: 640rpx;
+  height: 846rpx;
+  background: linear-gradient(180deg,#6f11f7, #ac11f1 99%);
+  border-radius: 32rpx;
+  margin: 0 auto;
+  margin-top: 280rpx;
+  overflow: auto;
+}
+.record-top{
+  background:url("https://images.allcitygo.com/miniapp/202009/top.png") no-repeat;
+  background-size: 100% 100%;
+  width: 458rpx;
+  height: 118rpx;
+  line-height: 118rpx;
+  margin: -28rpx auto  0;
+  font-size: 36rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff
+}
+.record-content{
+    width: 576rpx;
+    min-height: 106rpx;
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+}
+.record-content .record-left{
+  font-size: 26rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  color: #fff;
+  line-height: 40rpx;
+  width: 416rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.record-content .record-right{
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  margin-left: auto;
+}
+.record-right view:nth-child(1){
+  text-align: right;
+  line-height: 40rpx;
+}
+.mt26{
+  margin-top: 26rpx;
+}
+.center{
+  align-items: center;
+}
+.record-content::after{
+    content: "";
+    height: 1px;
+    background-color: rgba(255,255,255,0.15);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+}
+.addressButton{
+  width: 136rpx;
+  height: 48rpx;
+  background: rgba(0,0,0,0.4);
+  border-radius: 24rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: rgb(255,255,255,0.85);
+  line-height: 48rpx;
+  margin: 8rpx 0 24rpx 0
+}
+.close{
+  width: 64rpx;
+  height: 64rpx;
+  margin: 40rpx auto;
+}

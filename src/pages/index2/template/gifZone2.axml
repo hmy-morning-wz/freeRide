@@ -1,0 +1,95 @@
+<import-sjs name="helper" from="../../../utils/helper.sjs"></import-sjs>
+<template name="gifZone">
+  <view class="gif-zone">
+   <!-- <view class="three-bg">
+      <view class="bg-top"></view>
+      <view class="bg-mid"></view>
+      <view class="bg-bot"></view>
+    </view> -->
+    <view class="area-title"> <view class="area-title-before"/> <text> {{gifZoneTitle||'实物抽奖区'}} </text>  <view class="area-title-after"/></view>    
+    <view class="draw-threshold">
+      抽奖条件:完成上方任务≥
+      <text>{{reachDrawTime}}</text>
+      次即可
+    </view>
+    <view  a:if="{{gifZone3.length>1}}" class="change-btn" onTap="onChangeTap">换一个</view>
+    <view class="one-brand" style="background: {{gifZone3[brandIdx].color}}" a:if="{{gifZone3.length>0}}">
+      <view a:if="{{gifZone3[brandIdx].image}}" class="brand-top" style="background: url('{{helper.crossImage(gifZone3[brandIdx].image)}}') no-repeat;background-size: 100% 100%;">
+        <image a:if="{{gifZone3[brandIdx].icon_img}}" class="brand-icon" mode="scaleToFill" src="{{helper.crossImage(gifZone3[brandIdx].icon_img)}}"></image>
+        <view class="info-right">
+          <view class="brand-name">
+            {{gifZone3[brandIdx].name}}
+          </view>
+          <view class="brand-desc">
+            <text> {{gifZone3[brandIdx].desc}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="brand-gif-list" a:if="{{gifZone3[brandIdx].gifZone.length>0}}">
+        <block a:for="{{gifZone3[brandIdx].gifZone}}" a:for-item="draw" a:for-index="idx">
+          <view class="each-brand-gif" style="margin-top:{{idx==0?'0':'32rpx'}}" onAppear="onNopAppear" data-obj="{{draw}}" onTap="onEntityDrawTap" key="draw-{{idx}}" data-index="{{idx}}" data-group="品牌-实物抽奖区">
+            <image class="gif-img" mode="scaleToFill" src="{{helper.crossImage(draw.image)}}"></image>
+            <view class="gif-right">
+              <view class="gif-title"><text>{{draw.title}}</text> </view>
+              <view class="gif-right-bottom">
+                <view class="gif-amt">
+                  ￥
+                  <text class="big-zero">0</text>
+                  <text a:if="{{draw.desc}}" class="gif-value">￥{{draw.desc}}</text>
+                </view>
+                <view a:if="{{gifReach}}" class="draw-btn {{draw.status===1?'not-reach-btn':''}}">{{draw.status===1?'已抽':(draw.status===0?'立即抽奖':"")}}</view>
+                <view a:else class="draw-btn">立即抽奖</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="brand-gif-list brand-goods-list" a:if="{{gifZone3[brandIdx].goodsCoupon.length>0}}">
+        <block a:for="{{gifZone3[brandIdx].goodsCoupon}}">
+          <view class="each-brand-gif" style="margin-top:{{index==0?'0':'24rpx'}}" onAppear="onNopAppear" data-obj="{{item}}" onTap="couponsTap" key="draw-{{index}}" data-index="{{index}}" data-group="品牌-实物商品区">
+            <image class="goods-img" mode="scaleToFill" src="{{helper.crossImage(item.image)}}"></image>
+            <view class="gif-right goods-right">
+              <view class="gif-title goods-title"><text>{{item.title}}</text></view>
+              <view class="gif-right-bottom">
+                <view class="gif-amt">
+                  ￥
+                  <text class="big-amt">{{item.desc}}</text>
+                </view>
+                <view class="draw-btn">立即抢购</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="brand-flashsale" a:if="{{gifZone3[brandIdx].flashsaleZone.length>0}}">
+        <view class="flashsale-tit">
+          品牌优惠券
+        </view>
+        <view class="x-overflow">
+          <view class="sale-list">
+            <block a:for="{{gifZone3[brandIdx].flashsaleZone}}">
+              <view class="each-sale" data-obj="{{item}}" onTap="couponsTap" onAppear="onNopAppear" data-index="{{index}}" data-group="优惠券秒杀区">
+                <image class="shop-icon" mode="scaleToFill" src="{{helper.crossImage(item.image)}}"/>
+                <view class="coupon-right">
+                  <view class="coupon-amt">
+                  {{item.amount}}
+                    <text>元</text>
+                  </view>
+                  <view class="coupon-threshold">
+                  {{item.desc}}
+                  </view>
+                
+                </view>
+                  <view class="coupon-right-button">
+                    <view class="coupon-btn">
+                    {{item.title}}
+                  </view>
+                  </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

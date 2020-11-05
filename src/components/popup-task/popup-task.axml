@@ -1,0 +1,243 @@
+<view class="guidance-modal-{{show ? 'show' : 'hide'}}" disable-scroll="{{showPopInfo.showPop =='getAddress' || showPopInfo.showPop =='share'?false:true}}">
+  <view class="guidance-modal-mask flex {{showPopInfo.showPop !='getAddress'? 'align-center':''}} justify-content">
+    <view>
+      <view a:if="{{showPopInfo.showPop ==='share'}}" class="popup-share">
+        <view class="popup-share-img-bg">
+        </view>
+        <view class="share-go-btn" onTap="onGoToShare" data-group="弹框-分享列表" data-seed="去分享">
+            去分享
+        </view>
+        <view class="flex" style="margin:40rpx auto 16rpx;width: fit-content;width: -webkit-fit-content;">
+          <view class="text-line" style="margin:24rpx 33rpx 0 0;">
+          </view>
+          <view class="share-desc">分享已得现金:</view>
+          <view class="share-money">
+            {{showPopInfo.redEnvelopeAmount}}元
+          </view>
+          <view class="text-line" style="margin:24rpx 0rpx 0 24rpx;">
+          </view>
+        </view>
+        <scroll-view scroll-y="{{true}}" style="height:424rpx;">
+          <view a:for="{{showPopInfo.shareList}}">
+            <view class="flex" style="width:100%;height:106rpx;">
+              <view class="share-item-user">
+            {{item.userName}}
+              </view>
+              <view a:if="{{item.completetStatus}}" class="share-item-success">
+            {{item.amount}}元
+              </view>
+              <view a:else class="share-item-none">
+            待完成
+              </view>
+            </view>
+            <view class="share-item-line">
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view a:elif="{{showPopInfo.showPop ==='getAddress'}}" class="popup-address" onAppear="onNopAppear" data-group="弹框-填写地址">
+        <scroll-view scroll-y="{{true}}" style="height:100%;">
+          <view class="popup-address-img-bg">
+          </view>
+          <view class="red-packet-desc">恭喜您获得</view>
+          <view class="red-packet-desc-money">
+            <text>{{showPopInfo.awardName}} </text>
+          </view>
+          <image style="width:160rpx;height:160rpx;margin:24rpx auto 24rpx" mode="scaleToFill" src="{{showPopInfo.awardPicUrl}}"/>
+          <view style="width:640rpx;margin:0rpx 54rpx 80rpx 54rpx;">
+            <view class="flex" style="width:100%;height:106rpx;">
+              <view class="address-item-title">
+                我的姓名
+              </view>
+              <view class="address-item-desc">
+                {{showPopInfo.addressName}}
+              </view>
+            </view>
+            <view style="width: 576rpx;height: 1px;background: rgba(0,0,0,0.1);margin:0 auto;">
+            </view>
+            <view class="flex" style="width:100%;height:106rpx;">
+              <view class="address-item-title">
+                手机号码
+              </view>
+              <view class="address-item-desc">
+                {{showPopInfo.addressMobile}}
+              </view>
+            </view>
+            <view style="width: 576rpx;height: 1px;background: rgba(0,0,0,0.1);margin:0 auto;">
+            </view>
+            <view class="flex" style="width:100%;height:106rpx;position:relative;">
+              <view class="address-item-title">
+                收货地址
+              </view>
+              <view class="address-item-desc-address" onTap="onShowTips">
+                {{showPopInfo.address}}
+              </view>
+              <tips-plain a:if="{{showTips}}" onClose="onTipsClose" onTimeOut="onTimeOut" time="{{time}}">{{showPopInfo.address}}</tips-plain>
+            </view>
+            <view style="width: 576rpx;height: 1px;background: rgba(0,0,0,0.1);margin:0 auto;">
+            </view>
+          </view>
+          <view class="task-go-btn" onTap="onAddressComplete" data-group="弹框-填写地址" data-seed="完成">
+            完成
+          </view>
+          <view class="address-update" onTap="onAddressUpdate" data-group="弹框-填写地址" data-seed="返回修改">
+            <text decode="{{true}}">&lt; 返回修改</text>
+          </view>
+        </scroll-view>
+      </view>
+      <view a:else class="popup-task">
+        <view class="popup-task-img-bg">
+        </view>
+        <view a:if="{{showPopInfo.showPop ==='taskPop1'}}" onAppear="onNopAppear" data-group="弹框-首次入会">
+          <image style="width:120rpx;height:120rpx;margin:-60rpx auto 20rpx;border-radius: 100rpx;" mode="scaleToFill" src="{{showPopInfo.logoUrl}}"/>
+          <view class="flex" style="margin:0rpx auto 20rpx;width: fit-content;width: -webkit-fit-content;">
+            <view class="task-desc">{{showPopInfo.brandText}}</view>
+            <view class="task-money">
+            {{showPopInfo.redEnvelopeAmount}}元
+            </view>
+          </view>
+          <view class="task-term">
+            获得条件:完成店铺首次入会
+          </view>
+          <view class="task-go-btn" onTap="onJoinMember" data-group="弹框-首次入会" data-seed="去完成">
+            去完成
+          </view>
+        </view>
+        <view a:elif="{{showPopInfo.showPop ==='taskPop2'}}" onAppear="onNopAppear" data-group="弹框-翻倍">
+          <image style="width:120rpx;height:120rpx;margin:-60rpx auto 20rpx;border-radius: 100rpx;" mode="scaleToFill" src="{{showPopInfo.logoUrl}}"/>
+          <view class="flex" style="margin:0rpx auto 20rpx;width: fit-content;width: -webkit-fit-content;">
+            <view class="task-desc">{{showPopInfo.brandText}}助力红包翻倍至</view>
+            <view class="task-money">
+            {{showPopInfo.redEnvelopeAmount}}元
+            </view>
+          </view>
+          <view class="task-progress">
+            <view class="task-progress1" style="width:{{440/~~showPopInfo.taskTotalCount * ~~showPopInfo.taskCompleteCount}}rpx;">
+            </view>
+          </view>
+          <view class="task-term2">
+            再完成{{~~showPopInfo.taskTotalCount - ~~showPopInfo.taskCompleteCount}}次入会即可获得
+          </view>
+          <view class="task-go-btn" onTap="onJoinMember" data-group="弹框-翻倍" data-seed="去完成">
+            去完成
+          </view>
+        </view>
+        <view a:elif="{{showPopInfo.showPop ==='redPacket1'}}" onAppear="onNopAppear" data-group="弹框-放弃翻倍">
+          <view class="red-packet-desc">确认放弃红包翻倍？</view>
+          <view class="red-packet-desc-money">
+            最高可翻至{{ showPopInfo? (showPopInfo.redEnvelopeAmount || 16):16}}元
+          </view>
+          <view class="flex" style="margin:64rpx auto 0rpx;width: fit-content;width: -webkit-fit-content;">
+            <view class="red-btn-1" onTap="onGoLeave" data-group="弹框-放弃翻倍" data-seed="去意已决">
+            去意已决
+            </view>
+            <view class="red-btn-2" onTap="onGoDouble" data-group="弹框-放弃翻倍" data-seed="去翻倍">
+            去翻倍
+            </view>
+          </view>
+        </view>
+        <view a:elif="{{showPopInfo.showPop ==='redPacket2'}}" onAppear="onNopAppear" data-group="弹框-红包领取成功">
+          <view class="red-packet-desc">恭喜您获得</view>
+          <view class="red-packet-desc-money">
+            {{showPopInfo.redEnvelopeAmount}}元现金红包
+          </view>
+          <image style="width:160rpx;height:160rpx;margin:24rpx auto 24rpx" mode="scaleToFill" src="https://images.allcitygo.com/image/double202011/pic_hongbao.png?x-oss-process=image/format,webp"/>
+          <text class="red-packet-text">
+          （可在支付宝-卡包-优惠券中查看\n同支付宝账号、手机号、身份证、设备皆视为同一账号）
+          </text>
+          <!--<view class="red-go-share" onTap="onGoShare" data-group="弹框-红包领取成功" data-seed="分享赢更多红包">
+            分享赢更多红包</view> -->
+        </view>
+        <view a:elif="{{showPopInfo.showPop ==='redPacket3'}}" onAppear="onNopAppear" data-group="弹框-红包/礼包领取成功">
+          <view class="red-packet-desc">恭喜您获得</view>
+          <view class="flex" style="margin:31rpx auto 20rpx;width: fit-content;width: -webkit-fit-content;">
+            <view class="redPacket-content" a:if="{{showPopInfo.redEnvelopeAmount}}">
+              <view class="red-packet-title-desc">
+                {{showPopInfo.redEnvelopeAmount}}元现金红包
+              </view>
+              <image style="width:120rpx;height:120rpx;margin:16rpx auto 8rpx" mode="scaleToFill" src="https://images.allcitygo.com/image/double202011/icon_redbag.png?x-oss-process=image/format,webp"/>
+              <view class="red-packet-success-desc">
+                可在支付宝-卡包中查看
+              </view>
+            </view>
+            <view class="health-money-content" a:if="{{showPopInfo.giftTitle}}">
+              <view class="red-packet-title-desc">
+                {{showPopInfo.giftTitle}}
+              </view>
+              <image style="width:120rpx;height:120rpx;margin:16rpx auto 8rpx" mode="scaleToFill" src="https://images.allcitygo.com/image/double202011/icon_gift.png?x-oss-process=image/format,webp"/>
+              <view class="health-money-success-desc" onTap="onGetGift" data-group="弹框-红包/礼包领取成功" data-seed="点击领取">
+                点击领取
+              </view>
+            </view>
+          </view>
+          <text class="red-packet-text">
+          （同支付宝账号、手机号、身份证、设备皆视为同一账号）
+          </text>
+          <!--<view class="red-go-share" onTap="onGoShare" data-group="弹框-红包领取成功" data-seed="分享赢更多红包">
+            分享赢更多红包</view> -->
+        </view>
+        <view a:elif="{{showPopInfo.showPop ==='inviolableRights'}}" onAppear="onNopAppear" data-group="弹框-兜底券">
+          <view class="red-packet-desc">恭喜您获得</view>
+          <view  class="flex" style="margin:31rpx 64rpx 24rpx 64rpx;">
+            <view a:for="{{showPopInfo.inviolableRightsList}}"  onTap="onPopReceive" data-obj="{{item}}" data-group="弹框-兜底券" data-seed="点击领取"  style="width:224rpx;height:280rpx;background: #f0ecff;border-radius: 16rpx;margin:0 auto;">
+              <view a:if="{{item.itemTitle}}" class="inviolable-rights-amount">
+                {{item.itemTitle}}
+              </view>
+              <image class="inviolable-rights-icon" mode="scaleToFill" src="{{item.itemIcon}}" />
+              <view a:if="{{item.isShowBtn}}" class="inviolable-rights-btn" onTap="onPopReceive" data-obj="{{item}}" data-group="弹框-兜底券" data-seed="点击领取">
+            点击领取
+              </view>
+              <view a:else class="red-packet-success-desc" style="margin-top:8rpx;">
+                可在支付宝-卡包 中查看
+              </view>
+            </view>
+          </view>
+          <text class="red-packet-text">
+          （同支付宝账号、手机号、身份证、设备皆视为同一账号）
+          </text>
+          <!--<view class="red-go-share" onTap="onGoShare" data-group="弹框-红包领取成功" data-seed="分享赢更多红包">
+            分享赢更多红包</view> -->
+        </view>
+        <view a:elif="{{showPopInfo.showPop ==='award1'}}" onAppear="onNopAppear" data-group="弹框-实物领取成功">
+          <view class="red-packet-desc">恭喜您获得</view>
+          <view class="red-packet-desc-money">
+           <text> {{showPopInfo.awardName}}   </text> 
+          </view>
+          <image style="width:160rpx;height:160rpx;margin:24rpx auto 24rpx" mode="scaleToFill" src="{{showPopInfo.awardPicUrl}}"/>
+          <text class="red-packet-text">
+          （同支付宝账号、手机号、身份证、设备皆视为同一账号）
+          </text>
+          <view class="red-go-share" class="red-go-share" onTap="onGetAddress" data-group="弹框-实物领取成功" data-seed="填写收货地址">
+            填写收货地址
+          </view>
+        </view>
+        <view a:elif="{{showPopInfo.showPop ==='award2'}}" onAppear="onNopAppear" data-group="弹框-获得奖品">
+          <view class="red-packet-desc">恭喜您获得</view>
+          <view class="red-packet-desc-money">
+            <text> {{showPopInfo.awardName}}</text> 
+          </view>
+          <image style="width:160rpx;height:160rpx;margin:24rpx auto 24rpx" mode="scaleToFill" src="{{showPopInfo.awardPicUrl}}"/>
+          <text class="red-packet-text">
+          （可在支付宝-卡包-优惠券中查看\n同支付宝账号、手机号、身份证、设备皆视为同一账号）
+          </text>
+        </view>
+        <view a:elif="{{showPopInfo.showPop ==='travelVoucher'}}" onAppear="onNopAppear" data-group="弹框-出行券">
+          <view class="red-packet-desc">恭喜您获得</view>
+          <view class="travel-voucher">
+            {{showPopInfo.travelVoucher}}
+          </view>
+          <view class="task-go-btn" onTap="onGoRiding" data-group="弹框-出行券" data-seed="{{showPopInfo.travelButtonText}}">
+            {{showPopInfo.travelButtonText}}
+          </view>
+        </view>
+        <view a:elif="{{showPopInfo.showPop ==='notWinning'}}" onAppear="onNopAppear" data-group="弹框-抱歉未中奖">
+          <view class="red-packet-desc">抱歉，未中奖</view>
+          <text class="red-packet-text" style="margin-top:40rpx;">
+          （可在支付宝-卡包-优惠券中查看\n同支付宝账号、手机号、身份证、设备皆视为同一账号）
+          </text>
+        </view>
+      </view>
+      <image onTap="onTaskPopClose" data-group="弹框-弹框关闭" data-seed="{{showPopInfo.showPop}}" class="close-img" mode="scaleToFill" src="https://images.allcitygo.com/miniapp/202010/pop-task-close.png"/>
+    </view>
+  </view>
+</view>

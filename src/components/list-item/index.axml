@@ -1,0 +1,10 @@
+<view class="list-item row">
+  <label class="checkbox">
+    <checkbox onChange="toggleFinished" 
+    class="checkbox-text {{ item.finished === true ? 'text-line' : '' }}" 
+    value="{{ item.key }}-{{ item.content }}" data-key="{{ item.key }}" checked="{{ item.finished }}" />
+    <text class="checkbox-text {{ item.finished === true ? 'text-line' : '' }}"> {{item.name || item.content}}</text>
+  </label>
+  <view onTap="viewItem" a:if="{{!item.finished}}" data-key="{{ item.key }}" class="list-view">查看</view>
+  <view onTap="removeItem"  a:else data-key="{{ item.key }}" class="list-del">删除</view>
+</view>

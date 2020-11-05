@@ -1,0 +1,8 @@
+<view class="draw-page">
+ <view class="draw-rule" style="margin-top:{{statusBarHeight+titleBarHeight}}rpx;" onTap="onRule"> 活动规则 </view>
+  <view class="draw-image"  style=" background: url('{{draw.image}}') center no-repeat;background-size: 100% 100%; margin-top:{{79+statusBarHeight+titleBarHeight}}rpx;">
+   
+    <view class="draw-button"  data-obj="{{draw}}" onTap="onDraw"></view>
+  </view>
+  <view class="draw-bannner"  style=" background: url('{{banner.image}}') center no-repeat;background-size: 100% 100%;" data-obj="{{banner}}" onTap="onBanner"></view>
+</view>

@@ -1,0 +1,14 @@
+<import-sjs name="helper" from="../../utils/helper.sjs"/>
+<view class="record-contain">
+    <view class="record-list">
+        <view class="record-top">中奖记录</view>
+        <view  a:for="{{recordList}}" class="record-content {{item.realKindsLocation ? '': 'center'}}">
+            <view class="record-left {{item.realKindsLocation ? 'mt26': ''}}"><text>{{item.prizeName}}</text></view>
+            <view class="record-right">
+                <view class="{{item.realKindsLocation ? 'mt26': ''}}">{{item.receiveTime}}</view>
+                <view class="addressButton" a:if="{{item.realKindsLocation}}" onTap="handleAddress" data-obj="{{item}}">添加地址</view>
+            </view>
+        </view>
+    </view>
+    <image onTap="handleClose" class="close" mode="scaleToFill" src="{{helper.crossImage('https://images.allcitygo.com/miniapp/202009/close.png')}}"/>
+</view>

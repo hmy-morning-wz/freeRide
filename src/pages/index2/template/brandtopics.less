@@ -1,0 +1,210 @@
+.brandtopics {
+  margin-top: 24rpx;
+  width: 726rpx;
+
+  background: linear-gradient(
+    180deg,
+    rgba(201, 102, 255, 1) 0%,
+    rgba(206, 69, 255, 1) 0%,
+    rgba(178, 49, 255, 1) 32%,
+    rgba(68, 11, 108, 1) 100%
+  );
+  box-shadow: 0px 2rpx 4rpx 0px rgba(244, 111, 255, 0.5);
+  border-radius: 32rpx;
+  
+  .titlebox {
+    margin-top: 10rpx;
+    height: 202rpx;
+    margin-bottom: -110rpx;
+    background: url("https://images.allcitygo.com/miniapp/202005/topic_top.png?x-oss-process=image/format,webp")
+    center no-repeat;
+    background-size: 704rpx 100%;
+    .title1 {
+      position: relative;
+      margin-left: 24rpx;
+      margin-right: 12rpx;
+      top: 34rpx;
+      height: 56rpx;
+      font-size: 40rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: rgba(245, 237, 255, 1);
+      line-height: 56rpx;
+      text-shadow: 0px 2rpx 0px rgba(199, 43, 217, 0.5);
+    }
+    .title2 {
+      position: relative;
+      margin-left: 12rpx;
+      margin-right: 12rpx;
+      top: 34rpx;
+      height: 48rpx;
+      font-size: 32rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 48rpx;
+    }
+  }
+  .topicbox-list {
+  .topicbox {
+    position: relative;
+    margin-top: 24rpx;
+    overflow: hidden;
+    width: 726rpx;
+    height: 486rpx;
+    background: linear-gradient(
+      174deg,
+      rgba(225, 114, 255, 1) 0%,
+      rgba(170, 19, 255, 1) 100%
+    );
+    border-radius: 24rpx;
+    background: url("https://images.allcitygo.com/miniapp/202005/goods_box_bg2.png?x-oss-process=image/format,webp")
+    center no-repeat;
+    background-size: 100% 100%;
+    .hotbox {
+      width: 160rpx;
+      height: 48rpx;
+      text-align: center;
+      background: linear-gradient(
+        150deg,
+        rgba(255, 56, 254, 1) 0%,
+        rgba(216, 17, 204, 1) 100%
+      );
+        background: url("https://images.allcitygo.com/miniapp/202005/hot_bg.png?x-oss-process=image/format,webp")
+    center no-repeat;
+  background-size: 100% 100%;
+      border-radius: 0px 0px 24rpx 0px;
+      .hotValue {
+        margin-left: 24rpx;
+        height: 48rpx;
+        font-size: 26rpx;
+        font-family: DINAlternate-Bold, DINAlternate;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 1);
+        line-height: 48rpx;
+        letter-spacing: 1rpx;
+      }
+    }
+     .buttongo {
+              position: absolute;
+              top:24rpx;
+              right: 36rpx;
+              background: url("https://images.allcitygo.com/miniapp/freebus/btgo.png");
+              background-size:100% 100%;
+              width: 77rpx;
+              height: 40rpx;
+            }
+    .topictitle {
+      margin-left: 36rpx;
+      margin-top: 16rpx;
+      height: 52rpx;
+      font-size: 36rpx;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 1);
+      line-height: 52rpx;
+    }
+    .goods-box {
+      height: 270rpx;
+      margin-top:32rpx;    
+      swiper {
+        overflow: visible;
+      }
+      swiper-item {
+        overflow: visible;      
+      }
+      .goods-list {
+         
+        z-index: 1;
+        .item-box{
+           height: 340rpx;
+        }
+        .item {
+          position: relative;
+          top: 30rpx;
+          margin-left: 12rpx;
+          text-align: center;
+          width: 220rpx;
+          overflow: hidden;
+          height: 220rpx;
+          background: rgba(255, 255, 255, 1);
+          border-radius: 28rpx;
+          box-sizing: border-box;
+          border: 4rpx solid rgba(255, 0, 125, 1);
+          display: flex;
+          display: -webkit-flex;
+          justify-content: center;
+          .text-box {
+            position: absolute;
+            bottom: 14rpx;
+            width: 176rpx;
+            height: 40rpx;
+            background: linear-gradient(
+              137deg,
+              rgba(255, 69, 162, 1) 0%,
+              rgba(248, 6, 55, 1) 100%
+            );
+            border-radius: 20rpx;
+            .logo {
+              position: absolute;
+              bottom: 0rpx;
+              left: 0rpx;
+              width: 40rpx;
+              height: 40rpx;
+              border-radius: 20rpx;
+            }           
+            .title {
+              display: inline;
+              font-size: 20rpx;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: rgba(255, 255, 255, 1);
+              line-height: 28rpx;
+            }
+          }
+          .goods-image {
+            position: absolute;
+            width: 220rpx;
+            height: 220rpx;
+          }
+        }
+        .selected {
+          transform: scale(1.1);
+
+          top: 0rpx !important;
+          
+        }
+      }
+    }
+    .topic-bottom{
+      width: 726rpx;
+      height: 104rpx;
+      background: url("https://images.allcitygo.com/miniapp/202005/topic2_bottom.png?x-oss-process=image/format,webp")
+      center no-repeat;
+      background-size: 100% 100%;
+    } 
+
+ 
+  }
+  }
+}
+.topicbox.box-8,
+.topicbox.box-6,
+.topicbox.box-4,
+.topicbox.box-2,  
+.topicbox.box-0 {
+      width: 726rpx;
+      height: 486rpx;
+      background: url("https://images.allcitygo.com/miniapp/202005/goods_box_bg1.png?x-oss-process=image/format,webp")
+      center no-repeat  !important;
+      background-size: 100% 100% !important;
+       .topic-bottom{
+      width: 726rpx;
+      height: 104rpx;
+      background: url("https://images.allcitygo.com/miniapp/202005/topic_bottom.png?x-oss-process=image/format,webp")
+      center no-repeat  !important;
+      background-size: 100% 100% !important;
+     
+    }
+}
+ 

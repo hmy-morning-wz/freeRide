@@ -1,0 +1,53 @@
+<template name="brandtopics">
+  <view class="brandtopics">
+    <view class="titlebox">
+      <text class="title1">{{topicTitle}}</text>
+      <text class="title2">|</text>
+      <text class="title2">{{topicTitle2}}</text></view>
+      <view class="topicbox-list">
+    <view class="topicbox topic-{{item.topicId}} box-{{index}} " onTap="onTopic" key="topic-{{index}}" data-index="{{index}}" data-obj="{{item}}" a:for="{{topicList}}">
+      <view class="hotbox">
+        <text class="hotValue"> {{hotValue[item.topicId]}}</text></view>
+         <view  class="buttongo"> </view>
+      <view class="topictitle">
+        <text > {{item.name}}</text></view>
+      <view class="goods-box">
+      
+        <swiper class="goods-list" next-margin="120rpx"  previous-margin="120rpx" 
+        indicator-dots="{{item.goods.length>3}}"       
+        current-item-id="{{currentItem[item.topicId]}}" onChange="swiperChange" current="1" data-obj="{{item}}">
+          <block a:for="{{item.goods}}" key="{{index}}" a:for-item="node">
+            <swiper-item item-id="{{index}}" data-item-id="{{index}}">    
+             <view class="item-box">         
+                <view class="item {{( (currentItem[item.topicId]==undefined &&index===1) ||   currentItem[item.topicId]== index) ? 'selected' : ''}}" 
+                style="background:url({{node.image}}?x-oss-process=image/format,webp);background-size:100% 100%"
+                key="item-{{index}}" data-obj="{{node}}" data-index="{{index}}" catchTap="onGoodsTap">
+                 
+                 <!--   <image class="goods-image" lazy-load="{{true}}" a:if="{{node.image}}" mode="scaleToFill" src="{{`${node.image}?x-oss-process=image/format,webp`}}"/>-->
+               <!--  <view class="text-box">
+                    <image class="logo" lazy-load="{{false}}" a:if="{{node.logo}}" mode="scaleToFill" src="{{`${node.logo}?x-oss-process=image/resize,m_fill,h_40,w_40/format,webp`}}"/>
+                    <view class="title">{{node.text}}</view>
+                  </view> -->
+                </view>  
+             </view>             
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <!--goods-box -->
+      <view class="topic-bottom">
+       
+      </view>
+      <!-- topic-bottom -->
+     <!-- <view class="topic-bottom2">
+        <view ></view>
+        <view ></view>
+        <view ></view>
+      </view>-->
+      <!-- topic-bottom -->
+    </view>
+    <!-- topicbox -->
+    </view>
+  </view>
+  <!-- brandtopics -->
+</template>

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "record-list": "/components/record-list/index"
+  }
+}

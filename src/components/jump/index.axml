@@ -1,0 +1,52 @@
+<import-sjs name="helper" from="../../utils/helper.sjs"/>
+<view class="jump-container">
+    <record-list a:if="{{recordShow}}" onHandleClose="handleClose" onAddress="address"  recordList="{{recordList}}"></record-list>
+    <view class="game-bg" style="background:url('{{page.image}}')no-repeat;background-size: 100% 100%;">
+        <view a:if="{{showdubble2==='ON'}}" class="bubble{{index}} bubble" a:for="{{taskList2}}"  onTap="handleShop" onAppear="onNopAppear" data-obj="{{item}}">
+            <view class="bg-circle">
+                <image class="logo" mode="scaleToFill" src="{{helper.crossImage(item.icon_img)}}"/>
+            </view>
+            <view class="title">{{item.name}}</view>
+        </view>
+        <view class="travel-bubble" a:if="{{showdubble1==='ON' && topTask.length > 0 && (showdubble2!=='ON' ||  (taskList2 && taskList2.length<=3))}}" a:for="{{topTask.slice(0,1)}}" onAppear="onNopAppear" data-obj="{{item}}" onTap="handleTravel">
+            <image mode="scaleToFill" src="{{helper.crossImage(item.image)}}"/>
+            <view>{{item.title}}</view>
+        </view>
+
+         <view class="center-bubble" a:if="{{alipayCenter && alipayCenter.image }}" a:for="{{topTask.slice(0,1)}}" onAppear="onNopAppear" data-obj="{{alipayCenter}}" onTap="onHandleJump">
+            <image mode="scaleToFill" src="{{helper.crossImage(alipayCenter.image)}}"/>
+            <view>{{alipayCenter.title}}</view>
+        </view>
+
+        <view class="rule" data-spmId="${spmAPos}.${spmBPos}.c58532.d120951_1"  data-scm="${system}.${subsystem}.creative.rule.${traceId}"  onTap="handleRule">
+            <view>规则</view>
+        </view>
+         <view  a:if="{{shareSw==='ON'}}" class="share" data-spmId="${spmAPos}.${spmBPos}.c58532.d120951_2"  data-scm="${system}.${subsystem}.creative.share.${traceId}"  onTap="handleShare">
+            <view>分享</view>
+        </view>
+         <!--  <image class="person" mode="scaleToFill" src="{{helper.crossImage('https://images.allcitygo.com/miniapp/202009/man.png')}}"/>  -->
+        <view class="content" onAppear="onNopAppear"  data-group="首页红包">
+            <view class="open" a:if="{{redBag.amount > 0}}" onTap="handleReceive" >
+                <view class="prize-title">恭喜已获得</view>
+                <view class="amount">
+                    <text>¥</text>{{redBag.amount}}
+                    </view>
+               <!-- <view class="giveup" onTap="hanldeGiveup" a:if="{{redBag.state == 1}}">放弃翻倍</view> -->
+               <view class="text" >已发放至支付宝-卡券包</view>
+            </view>
+            <view a:else class="envelopes-warp {{redBag.state == 0 ?'shaking':''}}"  > 
+              <image class="envelopes" onTap="handleReceive" mode="scaleToFill" src="{{helper.crossImage('https://images.allcitygo.com/miniapp/202010/red_bg2.svg')}}"/>
+              <view class="text" >做任务领现金红包</view>   
+             </view>
+            <view class="record" onTap="handleRecord">获奖记录</view>
+            <view class="receive" onTap="handleReceive" a:if="{{redBag.state == 1}}">
+                <image src="{{helper.crossImage('https://images.allcitygo.com/miniapp/202009/continue.png')}}"/>
+            </view>
+            <view class="receive" onTap="handleReceive" a:else>
+                <image a:if="{{isFirstClick}}" mode="scaleToFill" src="{{helper.crossImage('https://images.allcitygo.com/miniapp/202009/receive.png')}}"/>
+                <image  a:else mode="scaleToFill" src="{{helper.crossImage('https://images.allcitygo.com/miniapp/202009/receive2.png')}}"/>
+            </view>
+        </view>
+    </view>
+     
+</view>

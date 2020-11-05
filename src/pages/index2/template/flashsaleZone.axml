@@ -1,0 +1,25 @@
+<template name="flashsaleZone">
+  <view class="flash-sale-zone">
+    <view class="area-title">
+      {{flashsaleTitle||'优惠券秒杀区'}}
+    </view>
+    <view class="x-overflow">
+      <view class="sale-list">
+        <block a:for="{{flashsaleZone}}">
+          <view class="each-sale" data-obj="{{item}}" onTap="couponsTap" onAppear="onNopAppear"  data-index="{{index}}" data-group="优惠券秒杀区">
+            <view class="coupon-amt">
+              <text>{{item.amount}}</text>元
+            </view>
+            <view class="shop-name">
+              <image class="shop-icon" lazy-load mode="scaleToFill" src="{{item.image}}"/>
+            {{item.name}}
+            </view>
+            <view class="coupon-threshold">
+            {{item.desc}}
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

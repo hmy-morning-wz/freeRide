@@ -1,0 +1,26 @@
+<view  class="task-list-{{show ? 'show' : 'hide'}}"  disable-scroll="{{false}}" >  <!-- task-list -->
+	<view class="task-list-mask"      data-seed="显示任务列表" data-group="任务列表" onAppear="onAppear" > <!-- task-list-mask -->
+	 <view class="task-list-document " catchTap="onModalClose" > <!-- task-list-document -->
+	   <view class="task-body" catchTap="onNoneTap"> <!-- body -->     
+      <view class="title-box">{{taskTitle}}  </view> 
+	   <view class="close" data-group="任务列表"  onTap="onModalClose" ></view>
+     <view class="task-container" hover-stop-propagation="{{true}}"   a:if="{{taskList2.length}}">
+      <scroll-view class="task-box"  scroll-y="{{true}}"   >
+        	  <block a:for="{{taskList2}}" >
+       <view  a:if="{{!item.isMember}}"  class="task  selected" data-group="任务选择"   data-obj="{{item}}" data-index="{{index}}"  catchTap="onTaskTap">
+        <view class="logo">  <image  lazy-load="{{false}}" a:if="{{item.icon_img}}" mode="scaleToFill" src="{{`${item.icon_img}?x-oss-process=image/resize,m_fill,h_40,w_40/format,webp`}}"/>  </view> 
+        <view class="text1">{{item.name}}   </view> 
+        <view class="text2">{{item.text1}}  </view> 
+         <view class="go-button"></view>
+          <!--<view class="text2">   {{item.complete}} / {{item.count}} </view>    -->     
+      </view> 
+      </block> 
+      </scroll-view>      
+      <!-- <view class="go-task-button" data-group="任务列表"  data-name="去完成"  data-obj="{{currentItem||taskCountList[0]}}" onTap="onGoTask" >去完成</view> -->
+
+      </view> 
+      <view  a:else class="text3" >已完成所有任务</view>  
+	  </view> <!-- task-body -->
+	 </view> <!-- task-list-document -->
+	</view> <!-- task-list-mask -->
+</view>  <!-- task-list -->

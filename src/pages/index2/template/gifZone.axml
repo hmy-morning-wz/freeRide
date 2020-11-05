@@ -1,0 +1,36 @@
+<template name="gifZone2">
+  <view class="gif-zone">
+    <view class="area-title">
+      {{gifZoneTitle||'实物抽奖区'}}
+    </view>
+    <view class="draw-threshold">
+      需满足:可领金额达
+      <text>{{reachMoney}}</text>元
+    </view>
+    <view class="draw-list">
+      <swiper class="gif-swiper" previousMargin="0px" nextMargin="0px" 
+      indicator-dots autoplay="{{false}}">
+        <swiper-item key="swiper-item-{{index}}" a:for="{{gifZone2}}">
+          <view class="gif-swiper-item">
+            <block a:for="{{item}}" a:for-index="idx" a:for-item="draw">
+              <view class="each-draw" data-obj="{{draw}}" onTap="onEntityDrawTap" key="draw-{{idx}}" onAppear="onNopAppear"  data-index="{{index}}" data-group="实物抽奖区">
+                <image class="goods-img" lazy-load mode="scaleToFill" src="{{draw.image}}"/>
+                <view class="drow-bottom">
+                  <view class="goods-title">
+                    {{draw.title}}
+                  </view>
+                  <view a:if="{{gifReach}}" class="draw-btn {{draw.status===1?'not-reach-btn':''}}">
+                    {{draw.status===1?'已抽':'我要抽奖'}}
+                  </view>
+                  <view a:else class="draw-btn not-reach-btn">
+                    未达标
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,43 @@
+{
+  "name": "freeRide_herbjs",
+  "version": "1.0.0",
+  "description": "支付宝 IDE + TypeScript 研发模版",
+  "scripts": {
+    "postinstall": "cd src && npm install",
+    "dev": "npm run dev:herb",
+    "dev:herb": "herb dev",
+    "build": "npm run clean && npm run build:alipay",
+    "build:alipay": "herb build",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "npm run lint -- --fix",
+    "clean": "rimraf ./dist",
+    "init": "npx rimraf ./node_modules && npm install && npm run build",
+    "test": "jest",
+    "test:cov": "jest --coverage"
+  },
+  "dependencies": {
+    "@tklc/miniapp-tracker-sdk": "0.0.25",
+    "herbjs": "^0.4.3",
+    "mini-html-parser2": "^0.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-typescript": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^7.3.0",
+    "eslint-config-egg": "^8.0.1",
+    "herb-plugin-ide-fast": "^0.1.3",
+    "husky": "^4.2.5",
+    "less": "^3.10.3",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.3",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "jest": "^24.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && git add --all"
+    }
+  }
+}

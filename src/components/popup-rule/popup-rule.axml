@@ -1,0 +1,20 @@
+<view class="popup-rule-{{show ? 'show' : 'hide'}}" disable-scroll="{{false}}" >
+	<view class="popup-rule-mask"  />
+	 <view class="popup-rule-document " onTap="onModalClose">
+		<view class="popup-rule">
+		<view class="title">
+    		<text>活动规则</text>
+    </view>
+		<view class="body">
+       <scroll-view  scroll-y="{{true}}"   >
+        	<!--<text>{{ruleText}}</text>-->
+			<rich-text nodes="{{ruleText1}}" ></rich-text>
+      </scroll-view>
+
+    	</view>
+
+		
+			<view class="popup-rule-close" hover-class="popup-rule-close-active" a:if="{{showClose}}"  data-seed="点击关闭" data-group="规则弹框" catchTap="onModalClose" />
+		</view>
+	</view>
+</view>

@@ -1,0 +1,393 @@
+
+.jump-container{
+  position: relative;
+  background: #fff;
+}
+.game-bg{
+    position: relative;
+    background-size: 100% 100%;
+    width:100%;
+    height: 1690rpx;
+    overflow: hidden;
+}
+.bubble0{
+    position:absolute;
+    left: 32rpx;;
+    top: 493rpx;
+    z-index: 10;
+    width: 130rpx;
+}
+.bubble1{
+  position:absolute;
+  left: 31rpx;;
+  top: 907rpx;
+  z-index: 10;
+  width: 130rpx;
+}
+.bubble2{
+    position:absolute;
+    right: 30rpx;;
+    top: 840rpx;
+    z-index: 10;
+    width: 130rpx;
+}
+
+.bubble3{
+    position:absolute;
+    right: 32rpx;;
+    top: 516rpx;
+    z-index: 10;
+    width: 130rpx;
+}
+
+.bubble .logo{
+  width: 65rpx;
+  height: 65rpx;
+  display: block;
+  margin: 26rpx auto 0
+}
+.bubble .bg-circle{
+  width: 112rpx;
+  height: 112rpx;
+  background: url("https://images.allcitygo.com/miniapp/202009/bubble1.png") no-repeat;
+  background-size: 100%  100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.bubble .title{  
+  font-size: 30rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  line-height: 42rpx;
+  letter-spacing: -1px;
+  text-shadow: 0px 0px 10px 0px #b32ddc; 
+  margin: -7rpx auto 0;
+}
+
+/*
+.bubble1 .bg-circle{
+  width: 96rpx;
+  height: 96rpx;
+  display: block;
+  margin: 0 auto;
+  background: url("https://images.allcitygo.com/miniapp/202009/bubble2.png") no-repeat;
+  background-size: 100%  100%;
+  overflow: hidden;
+}
+
+.bubble1 .title{
+  font-size: 26rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  line-height: 42rpx;
+  letter-spacing: -1px;
+  text-shadow: 0px 0px 10rpx rgb(179,45,220); 
+  margin: -30rpx auto 0;
+}*/
+
+/*
+.bubble2 .bg-circle{
+  width: 126rpx;
+  height: 126rpx;
+  display: block;
+  margin: 0 auto;
+  background: url("https://images.allcitygo.com/miniapp/202009/bubble1.png") no-repeat;
+  background-size: 100%  100%;
+  overflow: hidden;
+}
+
+.bubble2 .title{
+  font-size: 26rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  line-height: 42rpx;
+  letter-spacing: -1px;
+  text-shadow: 0px 0px 10rpx rgb(179,45,220); 
+  margin: -30rpx auto 0;
+}*/
+
+
+
+.center-bubble{
+  position: absolute;
+  width: 116rpx;
+  top: 1244rpx;
+  left:52rpx;
+  z-index: 10;
+
+}
+.center-bubble image{
+  margin-left: 19rpx; 
+  width: 78rpx;
+  height: 78rpx;
+}
+.center-bubble view{
+  margin-top: -15rpx;
+width: 116rpx;
+font-size: 28rpx;
+font-family: PingFangSC, PingFangSC-Semibold;
+font-weight: 600;
+text-align: center;
+color: #ffffff;
+line-height: 42rpx;
+letter-spacing: -1rpx;
+text-shadow: 0px 0px 10rpx 0px rgba(179,45,220,0.9); 
+}
+
+
+
+.travel-bubble{
+  position: absolute;
+  width: 170rpx;
+  top: 600rpx;
+  right: 10rpx;
+  z-index: 10;
+
+}
+.travel-bubble image{
+  width: 166rpx;
+  height: 166rpx;
+  border-radius: 166rpx;
+}
+.travel-bubble view{
+  margin: -30rpx auto 0;
+  height: 45rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  line-height: 45rpx;
+  letter-spacing: -1rpx;
+  text-shadow: 0px 0px 10rpx rgb(38,192,95); 
+}
+.rule{
+  position: absolute;
+  right: 0;
+  top: 204rpx;
+  width:72rpx;
+  height:52rpx;
+  /*word-wrap: break-word;
+  word-break: normal;*/
+  text-align: center;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-align-content: center; 
+  background:rgb(0, 0,0,0.2);
+  border-radius: 16rpx 0px 0px 16rpx;
+  align-items: center;
+}
+.rule view{
+  font-size:26rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color: #fef5ef;
+  margin: 0 auto;
+  line-height: 37rpx;
+}
+.share{
+  position: absolute;
+  right: 0;
+  top: 278rpx;
+  width:72rpx;
+  height:52rpx;
+  /*word-wrap: break-word;
+  word-break: normal;*/
+  text-align: center;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-align-content: center; 
+  background:rgb(0, 0,0,0.2);
+  border-radius: 16rpx 0px 0px 16rpx;
+  align-items: center;
+}
+.share view{
+  font-size:26rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color: #fef5ef;
+  margin: 0 auto;
+  line-height: 37rpx;
+}
+.content{
+  margin: 470rpx auto 0;
+}
+.amount{
+  font-size: 88rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  text-align: center;
+  color: #f74f48;
+  line-height: 123rpx;
+}
+.amount text{
+  font-size: 54rpx;
+}
+.prize-title{
+  font-size: 28rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #9a3b54;
+  padding-top: 79rpx;
+}
+.giveup{
+  font-size: 26rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  width: 200rpx;
+  font-weight: 400;
+  color: #ffd699;
+  line-height: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  margin: 180rpx auto 0;
+  position: relative;
+  z-index: 11;
+}
+.record{
+  width: 168rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background: rgb(53, 23, 199,0.37);
+  border-radius: 33rpx;
+  margin: 100rpx auto 0;
+  font-size: 28rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #6ee8f9;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+.envelopes-warp,
+.envelopes{
+  width:442rpx;
+  height: 548rpx;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+.open .text {
+     width: 100%;
+   position: absolute;
+   bottom: 32rpx;
+   left: 0;
+text-align: center;
+font-size: 28rpx;
+font-family: PingFangSC, PingFangSC-Regular;
+font-weight: 400;
+text-align: center;
+color: #ffd699;
+line-height: 40rpx;
+}
+.envelopes-warp .text {
+   width: 100%;
+   position: absolute;
+   bottom: 54rpx;
+   left: 0;
+text-align: center;
+font-size: 28rpx;
+font-family: PingFangSC, PingFangSC-Regular;
+font-weight: 400;
+text-align: center;
+color: #ffd699;
+line-height: 40rpx;
+}
+.open{
+  width:394rpx;
+  height: 498rpx;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  background:url("https://images.allcitygo.com/miniapp/202009/open.png")no-repeat;
+  background-size: 100% 100%;
+}
+.receive{
+  width: 322rpx;
+  height: 176rpx;
+  margin: 50rpx auto 0;
+  /* background-color: red; */
+  z-index: 100;
+  position: relative;
+}
+.receive image{
+  width: 322rpx;
+  height: 176rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.person{
+  width: 750rpx;
+  height: 680rpx;
+  position: absolute;
+  z-index: 10;
+  top: 480rpx;
+  left: 0rpx;
+}
+.hide{
+  display: none !important;
+}
+.shaking{
+    animation: shak 1.5s ease infinte;
+    -webkit-animation: shak 1.5s ease infinite;
+}
+  @keyframes shak {
+    0%,75%{ transform: rotate(0deg)}
+    87.5% { transform: rotate(-8deg)}
+    100%{  transform:rotate(8deg)}
+  }
+
+
+@keyframes cf4FadeInOut {
+0% {
+opacity: 1;
+}
+49% {
+  opacity: 1;
+}
+50% {
+  opacity: 0;
+}
+100% {
+opacity: 0;
+}
+}
+
+@keyframes cf4FadeOutIn {
+0% {
+opacity: 0;
+}
+49% {
+  opacity: 0;
+}
+50% {
+  opacity: 1;
+}
+100% {
+opacity: 1;
+}
+}
+.receive .iamge1 {
+ animation-name: cf4FadeInOut;
+animation-iteration-count: infinite;
+animation-duration: 1s;
+animation-direction: alternate;
+}
+        
+.receive  .iamge2 {
+animation-name: cf4FadeOutIn;
+animation-iteration-count: infinite;
+animation-duration: 1s;
+animation-direction: alternate;
+}

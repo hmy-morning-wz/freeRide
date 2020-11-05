@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+   "tips-plain": "../../components/tips-plain/index"
+ }
+}

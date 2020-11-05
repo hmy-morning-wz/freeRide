@@ -1,0 +1,44 @@
+.draw-page {
+  width: 750px;
+  min-height: 100vh;
+  padding-left: 24rpx;
+  overflow: scroll;
+  background: #f5f5f5 url("https://images.allcitygo.com/miniapp/202009/draw_bg.png") center no-repeat;
+  background-size: 100% 100%;
+}
+.draw-page .draw-image {
+  position: relative;
+  width: 702rpx;
+  height: 1020rpx;
+}
+.draw-page .draw-button {
+  position: absolute;
+  bottom: 53rpx;
+  left: 31rpx;
+  width: 640rpx;
+  height: 121rpx;
+  background: url("https://images.allcitygo.com/miniapp/202009/button.png") center no-repeat;
+  background-size: 100% 100%;
+}
+.draw-page .draw-bannner {
+  margin-top: 46rpx;
+  width: 702rpx;
+  height: 182rpx;
+}
+.draw-page .draw-rule {
+  position: absolute;
+  right: 8rpx;
+  top: 0rpx;
+  width: 108rpx;
+  height: 43rpx;
+  opacity: 0.56;
+  background: #1577fa;
+  border-radius: 100rpx 0px 0px 100rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #fef5ef;
+  padding-left: 20rpx;
+  line-height: 42rpx;
+}

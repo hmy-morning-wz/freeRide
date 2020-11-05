@@ -1,0 +1,695 @@
+.container {
+  background: #3507B0;
+  min-height: 100vh;
+}
+
+.container .nogame-box {
+  height: 160rpx;
+}
+
+.containerfix {
+  position: fixed;
+}
+
+.container image {
+  display: block;
+}
+
+.other-area {
+  margin-top: -226rpx-36;
+  position: relative;
+  .tip-text {
+     width: 750rpx;
+     margin-bottom: 48rpx;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    text {
+    text-align: center;   
+    font-size: 24rpx;
+    font-family: PingFangSC, PingFangSC-Regular;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 36rpx;  
+    }
+   
+@keyframes rightan
+{
+from {
+bottom: 0%;
+opacity: 0;
+}
+to {
+  bottom: 5%;
+  opacity: 1;
+}
+}
+.rightan
+{
+animation: rightan 1s infinite;
+animation-fill-mode: both;
+margin-right: 13rpx;
+image{
+  width: 36rpx;
+  height: 36rpx;
+}
+}
+  }
+}
+
+.gif-zone {
+  position: relative;
+  box-sizing: border-box;
+  width: 718rpx;
+  /* height: 603rpx; */
+  padding: 80rpx 0 0rpx 0;
+  margin: 0 auto;
+  margin-bottom: 48rpx;
+  /* background: url('https://images.allcitygo.com/20200909194438263IkpMtf.png?x-oss-process=image/format,webp') no-repeat;
+  background-size: 100% 100%; */
+}
+.gif-zone  text {
+    white-space: pre-line;
+}
+
+.area-title {
+  z-index: 2;
+  position: absolute;
+  top: 17rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  text {
+  font-size: 40rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  line-height: 40rpx;
+  letter-spacing: 1rpx;
+  }
+
+}
+.area-title-before { 
+  margin-right:12rpx; 
+  background:  url('https://images.allcitygo.com/miniapp/202010/before.png?x-oss-process=image/format,webp')  no-repeat;
+  background-size: 100% 100%;
+  height: 40rpx;
+  width: 64rpx;   
+}
+.area-title-after {
+  margin-left:12rpx;
+  background:  url('https://images.allcitygo.com/miniapp/202010/after.png?x-oss-process=image/format,webp')  no-repeat;
+  background-size: 100% 100%;
+  height: 40rpx;
+  width: 64rpx;   
+}
+
+.change-btn {
+  z-index: 2;
+  position: absolute;
+  top: 80rpx;
+  right: 24rpx;
+  height: 48rpx;
+  //background: rgba(255, 255, 255, 0.25);
+  //border: 2rpx solid #ffffff;
+  border-radius: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  color: #FFED41;
+  line-height: 37rpx;
+}
+
+.draw-threshold {
+  position: relative;
+  top:0;
+  z-index: 2;
+  width: 480rpx;
+  height: 48rpx;
+  margin: 0 auto;
+  margin-bottom: 26rpx;
+  background: #6000e9;
+  border-radius: 33rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffed41;
+  line-height: 48rpx;
+}
+
+.one-brand {
+  box-sizing: border-box;
+  padding-bottom: 51rpx;
+  position: relative;
+  z-index: 2;
+  width: 702rpx;
+  /* background: #bc0c25; */
+  border-radius: 24rpx 24rpx 47rpx 47rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.brand-top {
+  box-sizing: border-box;
+  width: 702rpx;
+  height: 164rpx;
+ // padding: 16rpx 0 0 16rpx;
+  display: flex;
+  margin-bottom: 13rpx;
+  background-size: 100% 100% !important;
+}
+
+.brand-icon {
+  margin-left: 16rpx;
+  margin-top: 16rpx;
+  display: block;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 8rpx;
+  margin-right: 24rpx;
+}
+
+.info-right {
+  width: 399rpx;
+  overflow: hidden;
+}
+
+.brand-name {
+  margin-top: 16rpx;
+  margin-bottom: 4rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #ffffff;
+  line-height: 48rpx;
+}
+
+.brand-desc {
+  width: 399rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 36rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.brand-gif-list {
+  box-sizing: border-box;
+  width: 670rpx;
+  margin: 0 auto;
+  padding: 24rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.each-brand-gif {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 32rpx; */
+}
+
+.gif-img {
+  display: block;
+  width: 240rpx;
+  height: 180rpx;
+  border-radius: 8rpx;
+}
+
+.gif-right {
+  width: 358rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gif-title {
+  font-size: 32rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 45rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.gif-right-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.gif-amt {
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #fe0c2d;
+  line-height: 24rpx;
+}
+
+.big-zero {
+  margin-right: 4rpx;
+  font-size: 56rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  text-align: left;
+  color: #fe0c2d;
+}
+
+.gif-value {
+  color: rgba(0, 0, 0, 0.25);
+  text-decoration: line-through;
+}
+
+.draw-btn {
+  width: 160rpx;
+  height: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff5934, #fe012c 99%);
+  border-radius: 28rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 40rpx;
+}
+
+.not-reach-btn {
+  background: #d8d8d8;
+}
+
+.brand-goods-list {
+  margin-bottom: 24rpx;
+}
+
+.goods-img {
+  display: block;
+  width: 200rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+}
+
+.goods-title {
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.big-amt {
+  font-size: 48rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  text-align: left;
+  color: #fe0c2d;
+  line-height: 40rpx;
+}
+
+.goods-right {
+  width: 400rpx;
+  height: 150rpx;
+}
+
+.brand-flashsale {
+  padding-left: 15rpx;
+}
+
+.flashsale-tit {
+  margin-bottom: 16rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #ffffff;
+  line-height: 48rpx;
+}
+
+.x-overflow {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.sale-list {
+  width: fit-content;
+  display: flex;
+}
+
+.each-sale {
+  box-sizing: border-box;
+  width: 670rpx;
+  height: 160rpx;
+  padding: 20rpx;
+  margin-right: 16rpx;
+  background: url('https://images.allcitygo.com/miniapp/202010/yhq_bg.svg') no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+}
+
+.shop-icon {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 32rpx;
+}
+
+.coupon-right {
+  flex: 1;
+  text-align: center;
+}
+
+
+.coupon-right-button {
+  position: relative;
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  .coupon-btn {
+   position: absolute;
+   right: 4rpx;
+  width: 168rpx;
+  height: 64rpx;
+  margin: 0 auto;
+  background: linear-gradient(135deg,#ff5934, #fe012c 99%);
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 40rpx;
+}
+}
+.coupon-amt {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 72rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  color: #e43101;
+  line-height: 72rpx;
+}
+
+.coupon-amt text {
+  position: relative;
+  left: 4rpx;
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;  
+  border-radius: 100%;
+  font-size: 20rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  text-align: center;
+  color: #E43101;
+  line-height: 32rpx;
+}
+
+.coupon-threshold {
+  margin-top: 7rpx;
+  margin-bottom: 0rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #e43101;
+  line-height: 24rpx;
+}
+
+
+
+.live-zone {
+  position: relative;
+  box-sizing: border-box;
+  width: 718rpx;
+  padding: 126rpx 8rpx 0rpx 0;
+  margin: 0 auto;
+  margin-bottom: 48rpx;
+  /* background: url('https://images.allcitygo.com/202009101607595418yUby8.png') no-repeat;
+  background-size: 100% 100%; */
+}
+
+.brand-zone {
+  position: relative;
+  box-sizing: border-box;
+  width: 718rpx;
+  padding: 104rpx 24rpx 0rpx 24rpx;
+  margin: 0 auto;
+  margin-bottom: 48rpx;
+  /* background: url('https://images.allcitygo.com/202009101607595418yUby8.png') no-repeat;
+  background-size: 100% 100%; */
+}
+
+.three-bg {
+  width: 718rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bg-top {
+  width: 718rpx;
+  height: 56rpx;
+  //background: url('https://images.allcitygo.com/20200914163709876gXwAxU.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+.bg-mid {
+  width: 718rpx;
+  flex: 1;
+ // background: url('https://images.allcitygo.com/202009141637273053Rgom8.png') no-repeat;
+  //background-size: 100% 100%;
+}
+
+.bg-bot {
+  width: 718rpx;
+  height: 104rpx;
+  //background: url('https://images.allcitygo.com/20200914163743922peGTGt.png') no-repeat;
+  //background-size: 100% 100%;
+}
+
+.brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.each-brand {
+  z-index: 2;
+  position: relative;
+  width: 269rpx;
+  margin-bottom: 32rpx;
+}
+
+.flower-bg {
+  box-sizing: border-box;
+  width: 269rpx;
+  height:332rpx; 
+  background: url('https://img-citytsm.oss-cn-hangzhou.aliyuncs.com/miniapp/202010/bubble_bg.svg') no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.brand-wall-img {
+  display: block;
+  width: 200rpx;
+  height: 160rpx;
+  margin-bottom: 4rpx;
+}
+.icon-bg {
+  position: absolute;
+  left: 61rpx;
+  bottom: 72rpx;
+  width: 148rpx;
+  height: 72rpx;
+  border-radius: 22rpx;
+  background: url('https://images.allcitygo.com/20200918104939045cfnrx6.png?x-oss-process=image/format,webp') no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+.brand-wall-icon {
+  display: block;
+  width: 112rpx;
+  height: 52rpx;
+}
+.brand-wall-bubble {
+  box-sizing: border-box;
+  width: 260rpx;
+  height: 57rpx;
+  padding-top: 13rpx;
+  background: url('https://images.allcitygo.com/miniapp/202010/wallbubble.svg') no-repeat;
+  background-size: 100% 100%;
+  margin-left: 4.5rpx;
+  margin-top: 16rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #2b329f;
+  line-height: 40rpx;
+}
+
+.banner {
+  position: relative;
+  margin-top: 0rpx;
+  margin-bottom: 48rpx;
+  width:718rpx;
+  margin-left: 16rpx;
+  height: 160rpx;
+  //background: rgba(156, 123, 255, 1);
+  border-radius: 24rpx;
+  //border: 1px solid rgba(151, 151, 151, 1);
+  overflow: hidden;
+  image {
+    width: 718rpx;
+    height: 160rpx;
+  }
+}
+
+
+  .top_arrows {
+            width: 20rpx;
+            height: 20rpx;
+            border-top: 1rpx solid #c3c8d6;
+            border-right: 1rpx solid #c3c8d6;
+            transform: rotate(-45deg);           
+        }
+.goback{
+  z-index: 10;
+  width: 80rpx;
+  height: 80rpx;
+  opacity: 0.4;
+  background: #000000;
+   border-radius:50%;
+   position: absolute;
+   bottom: 256rpx;
+   right: 16rpx;
+   display: flex;
+   flex-flow: column;
+   justify-content: center;
+   align-items: center;
+   justify-items: center;
+   align-content: center;
+   
+text{
+  text-align: center;
+  opacity: 0.8;
+  font-size: 20rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 28rpx;
+}
+}
+
+.index-bottom {
+  width: 100%;
+  height: 1rpx;
+}
+
+.treasure-box {
+  z-index: 100;
+  position: fixed;
+  bottom: 200rpx;
+  right: 32rpx;
+  
+  image {
+    width: 118rpx;
+    height: 103rpx;
+  }
+  .progress-warp {
+    width: 118rpx;
+    height: 12rpx;
+    background: #ff5b29;
+    border-radius: 6rpx;
+    overflow: hidden;
+    .progress2 {
+   // width: 39rpx;
+    height: 12rpx;
+    background: linear-gradient(180deg,#ffeb6c, #fff3a9 23%, #ffd732);
+    border-radius: 6rpx;
+  }
+  }
+  .title{
+margin-left: 5rpx;
+width: 108rpx;
+height: 64rpx;
+background: rgba(73,67,63,0.95);
+border-radius: 6rpx 6rpx 18rpx 18rpx;
+display: flex;
+align-content: center;
+align-items: center;
+justify-content: center;
+ text{
+height: 44rpx;
+font-size: 18rpx;
+font-family: PingFangSC, PingFangSC-Regular;
+font-weight: 400;
+text-align: center;
+color: #ffffff;
+line-height: 22rpx;
+letter-spacing: -1px;
+ }
+  }
+  
+}
+
+
+
+@keyframes progress15s {
+   0%  {
+   
+    width: 0%;
+  }
+ 
+   100%  {
+      width: 100%;
+  }
+}
+
+.progress-animate {
+  animation: progress15s 15s ; 
+}
+.progress-complete {
+   width: 100%;
+}

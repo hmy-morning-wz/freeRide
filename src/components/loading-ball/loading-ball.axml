@@ -1,0 +1,9 @@
+<view class="guidance-modal-ball-{{show ? 'show' : 'hide'}}" disable-scroll="{{true}}">
+  <view class="guidance-modal-mask-ball" style="background-color: rgba(0, 0, 0, {{opacity}});">
+    <view id="loading5" style="margin:100% auto 0 auto;" >
+      <view class="demo5"></view>
+      <view class="demo6"></view>
+      <view class="demo7"></view>
+    </view>
+  </view>
+</view>

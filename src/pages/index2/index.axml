@@ -1,0 +1,57 @@
+<import-sjs name="helper" from="../../utils/helper.sjs"/>
+<import src="./template/gifZone2.axml"/>
+<import src="./template/brandList.axml"/>
+<import src="./template/newuser.axml"/>
+<import src="./template/banner.axml"/>
+<view class="container {{showTasklist || recordListShow || showPopInfo.isShowPop ?'containerfix':''}}" style="background:{{page && page.color||'#4201ad'}}">
+  <block a:if="{{layoutOrder.indexOf('game')>-1}}">
+    <jump redBag="{{redBag}}" page="{{page}}" shareSw="{{shareSw}}" taskList2="{{taskList3}}" showdubble1="{{showdubble1}}" showdubble2="{{showdubble2}}"  topTask="{{topTask}}" alipayCenter="{{alipayCenter}}"   onHandleJump="handleJump" onGetAddress="onGetAddress"  onDrawTap="onDrawTap" onCloseRecordList="closeRecordList" onTopTaskTap="onTopTaskTap" onBallTap="onBallTap" onGiveupDouble="onGiveupDouble" onPreheatRedBagList="onPreheatRedBagList"  recordList="{{recordList}}" onGoShare="onGoShare" onShowRule="onShowRule" ref="currentStepRef"></jump>
+  </block>
+  <block a:else >
+    <view class="nogame-box"></view>
+  </block>
+  <!--<block a:if="{{showUrl}}"><web-view id="web-view-1" src="{{url}}" onMessage="onMessage"></web-view></block >-->
+  <block a:if="{{loadReady}}">
+    <!-- 非h5页面  -->
+    <view class="other-area">
+    <view class="tip-text" > <view class="rightan"> <image mode="scaleToFill" src="https://images.allcitygo.com/miniapp/202010/down.png?x-oss-process=image/format,webp"/> </view><text>下滑免费抽品牌大奖</text></view>
+      <block  a:for="{{layoutOrder}}">
+        <block a:if="{{item!='live'}}">
+          <template a:if="{{index<=1 || bottomLoad}}" is="{{item}}" data="{{gifZone3,gifZoneTitle,reachDrawTime,gifReach,brandIdx,brandList,brandTitle,banner,systemInfo}}"/>
+        </block>
+        <block a:else >
+          <view class="live-zone"  a:if="{{index<=1 || bottomLoad}}">            
+            <!--<view class="three-bg">
+              <view class="bg-top"></view>
+              <view class="bg-mid"></view>
+              <view class="bg-bot"></view>
+            </view>
+            -->
+            <view class="area-title"><view class="area-title-before"/> <text>{{liveTitle||'直播区'}} </text><view class="area-title-after"/></view>
+             <live-card liveList="{{liveList}}" />
+          </view>
+        </block>
+      </block>
+      <view class="goback" onTap="goback"><view class="top_arrows"/> <text> 顶部 </text></view>
+    </view>
+    <view class="index-bottom" onAppear="onBottomLoad"/>
+    <view class="preLoadImage-box" a:if="{{loadReady}}">
+      <view a:for="{{preLoadImages}}">
+        <image mode="scaleToFill" src="{{item}}"/>
+      </view>
+    </view>
+    <!--规则  -->
+    <popup-rule a:if="{{rule}}" show="{{rule}}" ruleText="{{ruleText}}" onModalClose="onRuleClose"></popup-rule>
+    <task-list a:if="{{showTasklist}}" show="{{showTasklist}}" onModalClose="onTaskClose" onGoTask="onGoTask"></task-list>
+    <draw-result a:if="{{drawResult}}" show="{{drawResult}}" onModalClick="onResultClick"></draw-result>
+    <popup-task  a:if="{{showPopInfo.isShowPop}}" showPopInfo="{{showPopInfo}}" onJoinMember="onJoinMember" onGoDouble="onGoDouble" onGoLeave="onGoLeave" onTaskPopClose="onTaskPopClose" onGoShare="onGoShare" onGoToShare="onGoToShare" onGetAddress="onGetAddress" onAddressUpdate="onAddressUpdate" onAddressComplete="onAddressComplete" onGetGift="onGetGift" onGoRiding="onGoRiding" onPopReceive="onPopReceive"></popup-task>
+    <!--  -->
+  </block >
+  <!-- 非h5页面  -->
+  <view a:if="{{treasureBox && treasureBoxLogo}}" onFirstAppear="onNopAppear" data-seed="{{treasureBoxComplete?'大于等于15秒':'小于15秒'}}" data-group="浏览页面时长宝箱" class="treasure-box" onTap="onTapTreasureBox" >
+   <image mode="scaleToFill" src="{{treasureBoxLogo}}"/> 
+   <view class="progress-warp"> <view class="progress2 {{treasureBoxComplete?'progress-complete': 'progress-animate'}}"> </view> </view>
+   <view class="title"> <text> {{taskCount||!treasureBoxComplete ? "浏览页面15秒\n抽品牌大奖":"任务已经\n全部完成啦"}} </text> </view>
+   </view>
+     <loading-ball a:if="{{loading}}" opacity="{{loadingBallOpacity}}"></loading-ball> 
+</view>
